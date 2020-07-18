@@ -16,13 +16,14 @@
       <div class="mobile-toggle"> <span></span> <span></span> <span></span> </div>
       <nav>
         <ul>
-          <li><a class="smoothscroll" href="#header">Home</a></li>
-          <li><a class="smoothscroll" href="#about">Team</a></li>
-          <li><a class="smoothscroll" href="#skills">Events</a></li>
-          <li><a class="smoothscroll" href="#portfolio">Gallery</a></li>
-          <li><a class="smoothscroll" href="#contact">Technical Tuesdays</a></li>
-          <li><a class="smoothscroll" href="#contact">Alumni</a></li>
-          <li><a class="smoothscroll" href="#contact">Sponsors</a></li>
+          <li><a class="smoothscroll" href="./index.php">Home</a></li>
+          <li><a class="smoothscroll" href="./team.php">Team</a></li>
+          <li><a class="smoothscroll" href="./events.php">Events</a></li>
+          <li><a class="smoothscroll" href="./gallery.php">Gallery</a></li>
+          <li><a class="smoothscroll" href="./technicalTuesdays.php">Technical Tuesdays</a></li>
+          <li><a class="smoothscroll" href="./alumni.php">Alumni</a></li>
+          <li><a class="smoothscroll" href="./newsletters.php">Newsletters</a></li>
+          <li><a class="smoothscroll" href="./sponsors.php">Sponsors</a></li>
         </ul>
       </nav>
     </div>
