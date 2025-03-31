@@ -1,0 +1,9 @@
+@keyframes waveMove {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-10px); }
+    100% { transform: translateX(0); }
+}
+
+.wave {
+    animation: waveMove 5s infinite ease-in-out;
+}
