@@ -126,6 +126,22 @@
     30% { transform: translateX(6px); }
     100% { transform: translateX(0); }
     }
+
+    section {
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    section.dimmed {
+      opacity: 0.25;
+      transform: scale(0.98);
+    }
+
+    section:not(.dimmed) {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+
   </style>
 </head>
 
@@ -168,7 +184,7 @@
     </p>
 
     <!-- graph -->
-    <div class="mt-10 opacity-40">
+    <div id="graph" class="mt-10 opacity-40">
       <svg viewBox="0 0 200 80" class="w-44">
         <circle cx="10" cy="70" r="1.5" fill="currentColor" class="dot"/>
         <circle cx="30" cy="65" r="1.5" fill="currentColor" class="dot"/>
@@ -546,6 +562,52 @@ function refreshAbout() {
     currentIndex = 0;
   }, 10000);
 }
+
+// --- SCROLL STORYTELLING ---
+
+// Section focus
+const sections = document.querySelectorAll("section");
+
+function handleScrollFocus() {
+  let closest = null;
+  let minDistance = Infinity;
+
+  sections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    const sectionCenter = rect.top + rect.height / 2;
+    const viewportCenter = window.innerHeight / 2;
+
+    const distance = Math.abs(sectionCenter - viewportCenter);
+
+    if (distance < minDistance) {
+      minDistance = distance;
+      closest = section;
+    }
+  });
+
+  sections.forEach(section => {
+    if (section === closest) {
+      section.classList.remove("dimmed");
+    } else {
+      section.classList.add("dimmed");
+    }
+  });
+}
+
+// Graph parallax
+window.addEventListener("scroll", () => {
+  const graph = document.getElementById("graph");
+  if (!graph) return;
+
+  const offset = window.scrollY * 0.05;
+  graph.style.transform = `translateY(${offset}px)`;
+});
+
+// Combine with your existing scroll listeners
+window.addEventListener("scroll", handleScrollFocus);
+
+// Run once on load
+handleScrollFocus();
 </script>
 
 </body>
