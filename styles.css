@@ -7,3 +7,51 @@
 .wave {
     animation: waveMove 5s infinite ease-in-out;
 }
+
+.floating-shape0 {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+.floating-shape1 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+.floating-shape2 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+.floating-shape3 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite alternate;
+}
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+@media (max-width: 768px) {
+    .floating-shape3 {
+        display: none;
+    }
+}
+@media (max-width: 768px) {
+    .floating-shape2 {
+        display: none;
+    }
+}
