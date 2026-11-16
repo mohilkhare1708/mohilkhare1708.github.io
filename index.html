@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mohil Khare</title>
+  <meta name="description" content="Mohil Khare — Senior Data Analyst, wealth management analytics at IDFC First Bank." />
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -112,10 +113,29 @@
     }
 
     .project-desc.open {
-    max-height: 500px;
+    max-height: 1000px;
     opacity: 1;
     transform: translateY(0);
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
     }
+
+    /* project rows */
+    .project:hover { background: rgba(0, 0, 0, 0.025); }
+    .dark .project:hover { background: rgba(255, 255, 255, 0.025); }
+
+    /* accent: one quiet colour, only on interaction */
+    .project .arrow { color: #9ca3af; transition: transform 0.3s ease, color 0.3s ease; }
+    .project:hover .arrow,
+    .project.open .arrow { color: #059669; }
+    .dark .project:hover .arrow,
+    .dark .project.open .arrow { color: #34d399; }
+    .project.open .case-line { border-color: #059669; }
+    .dark .project.open .case-line { border-color: rgba(52, 211, 153, 0.6); }
+
+    .accent-link { text-decoration: underline; text-decoration-color: transparent; text-underline-offset: 4px; transition: text-decoration-color 0.3s ease; }
+    .accent-link:hover { text-decoration-color: #059669; }
+    .dark .accent-link:hover { text-decoration-color: #34d399; }
 
     .project-hint {
     animation: hintMove 0.8s ease;
@@ -132,8 +152,8 @@
     }
 
     section.dimmed {
-      opacity: 0.25;
-      transform: scale(0.98);
+      opacity: 0.5;
+      transform: scale(0.99);
     }
 
     section:not(.dimmed) {
@@ -245,7 +265,7 @@
         </a>
       
         <!-- Resume -->
-        <a href="/assets/Mohil Khare CV 5Apr25.pdf" target="_blank" rel="noopener noreferrer"
+        <a href="/assets/Mohil_Khare_Resume.pdf" target="_blank" rel="noopener noreferrer"
         class="magnetic hover-lift p-2 rounded-md 
         text-gray-600 dark:text-gray-400 
         hover:text-gray-900 dark:hover:text-white 
@@ -270,7 +290,7 @@
 
     <p class="leading-relaxed text-gray-700 dark:text-gray-300">
       I work at the intersection of analytics, engineering, and business strategy —
-      building systems that translate complex data into clear, actionable decisions.
+      building systems that translate complex data into clear, actionable decisions. Lately, that includes gen AI tools used by frontline relationship managers.
     </p>
   </section>
 
@@ -287,15 +307,15 @@
       <div>
         <div class="flex justify-between items-baseline">
           <p class="font-medium">Senior Data Analyst</p>
-          <p class="text-xs text-gray-500">2025 — Present</p>
+          <p class="text-xs text-gray-500">Sep 2025 — Present</p>
         </div>
-  
+
         <p class="text-gray-500 text-sm mb-2">
           IDFC First Bank, Mumbai
         </p>
-  
+
         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Leading analytics and modelling for wealth management decisioning, focusing on senior management strategy, modelling and automated KRA tracking.
+          Leading a team of 5 in wealth analytics — shaping product, channel and customer-engagement decisions through causal analysis and modelling, and building gen AI tools and recommendation systems used by frontline RMs and customers.
         </p>
       </div>
   
@@ -303,18 +323,34 @@
       <div>
         <div class="flex justify-between items-baseline">
           <p class="font-medium">Data Analyst</p>
-          <p class="text-xs text-gray-500">Earlier</p>
+          <p class="text-xs text-gray-500">Jul 2022 — Aug 2025</p>
         </div>
-  
+
         <p class="text-gray-500 text-sm mb-2">
           IDFC First Bank, Mumbai
         </p>
-  
+
         <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
-          Built data models and decision systems across domains, focusing on translating complex data into business outcomes.
+          Built data models and decision systems across domains — propensity, look-alike and CLTV models, RM allocation, and private banking dashboards — focusing on translating complex data into business outcomes.
         </p>
       </div>
-  
+
+      <!-- Education -->
+      <div>
+        <div class="flex justify-between items-baseline">
+          <p class="font-medium">B.Tech, Computer Engineering</p>
+          <p class="text-xs text-gray-500">2018 — 2022</p>
+        </div>
+
+        <p class="text-gray-500 text-sm mb-2">
+          K.J. Somaiya Institute of Engineering and IT, Mumbai
+        </p>
+
+        <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+          CGPA 9.36 / 10, Award for Academic Excellence. Chairperson of the Computer Society of India student chapter, leading a team of 150.
+        </p>
+      </div>
+
     </div>
   
   </section>
@@ -329,23 +365,29 @@
         tap to explore
       </p>
 
-    <div class="space-y-6">
+    <div class="border-y border-gray-200 dark:border-white/10 divide-y divide-gray-200 dark:divide-white/10">
 
-        <div onclick="toggleProject(this)" class="cursor-pointer">
+        <div onclick="toggleProject(this)" class="project cursor-pointer py-4 px-2 -mx-2 transition-colors">
 
             <!-- Title -->
-            <p class="hover-lift magnetic flex items-center gap-2">
-                <span class="arrow transition-transform duration-300">→</span>
-                Value Index Navigation | Mutual Funds Recommendation Engine
-            </p>
+            <div class="flex items-start gap-3">
+              <span class="arrow transition-transform duration-300 leading-6">→</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-baseline justify-between gap-4">
+                  <p class="text-gray-900 dark:text-gray-100">Value Index Navigation</p>
+                  <p class="text-xs text-gray-500 tabular-nums whitespace-nowrap">+2.1% alpha</p>
+                </div>
+                <p class="text-sm text-gray-500 mt-0.5">Mutual Funds Recommendation Engine</p>
+              </div>
+            </div>
           
             <!-- Case Study -->
-            <div class="project-desc mt-6 space-y-6 text-sm text-gray-400">
+            <div class="project-desc space-y-6 text-sm text-gray-600 dark:text-gray-400 pl-6">
           
               <!-- Context -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Context</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
                     Investment decisions were manual, backward-looking, and prone to manager bias.
                   </p>
@@ -355,7 +397,7 @@
               <!-- Challenge -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Challenge</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
                     Generate alpha over benchmarks using purely quantitative methods, despite limited forward-looking data.
                   </p>
@@ -365,7 +407,7 @@
               <!-- Approach -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Approach</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
                     Built a composite scoring model to rank mutual funds within categories.  
                     Derived factor weights using regression, optimizing for Spearman IC while targeting benchmark outperformance.
@@ -376,33 +418,125 @@
               <!-- Outcome -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Outcome</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
-                    +2.1% alpha over benchmark  
+                    +2.1% alpha over benchmark
                     <br/>
                     <span class="text-gray-500">+0.7% incremental alpha vs qualitative strategies</span>
+                    <br/>
+                    <span class="text-gray-500">Live on the app, with live results in line with the back-test.</span>
                   </p>
                 </div>
               </div>
-          
+
             </div>
           </div>
 
-          <div onclick="toggleProject(this)" class="cursor-pointer">
+          <div onclick="toggleProject(this)" class="project cursor-pointer py-4 px-2 -mx-2 transition-colors">
 
             <!-- Title -->
-            <p class="hover-lift magnetic flex items-center gap-2">
-                <span class="arrow transition-transform duration-300">→</span>
-                Wealth Readiness Model | Enabling Customer Prioritization
-            </p>
+            <div class="flex items-start gap-3">
+              <span class="arrow transition-transform duration-300 leading-6">→</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-baseline justify-between gap-4">
+                  <p class="text-gray-900 dark:text-gray-100">Financial Fitness Score</p>
+                  <p class="text-xs text-gray-500 tabular-nums whitespace-nowrap">6.5M customers</p>
+                </div>
+                <p class="text-sm text-gray-500 mt-0.5">Peer-Benchmarked Customer Health</p>
+              </div>
+            </div>
+
+            <!-- Case Study -->
+            <div class="project-desc space-y-6 text-sm text-gray-600 dark:text-gray-400 pl-6">
+
+              <!-- Approach -->
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Approach</p>
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
+                  <p>
+                    Led a peer-benchmarked financial fitness score built from in-bank and Account Aggregator data. Written in Python (OOP), so engineering could adopt it directly for batch runs.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Outcome -->
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Outcome</p>
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
+                  <p>
+                    6.5M customers scored, live on the app.
+                    <br/>
+                    <span class="text-gray-500">Now powering cross-sell.</span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div onclick="toggleProject(this)" class="project cursor-pointer py-4 px-2 -mx-2 transition-colors">
+
+            <!-- Title -->
+            <div class="flex items-start gap-3">
+              <span class="arrow transition-transform duration-300 leading-6">→</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-baseline justify-between gap-4">
+                  <p class="text-gray-900 dark:text-gray-100">Wealth Specialists</p>
+                  <p class="text-xs text-gray-500 tabular-nums whitespace-nowrap">₹2,000 Cr AUM</p>
+                </div>
+                <p class="text-sm text-gray-500 mt-0.5">Analytics for a New Channel</p>
+              </div>
+            </div>
+
+            <!-- Case Study -->
+            <div class="project-desc space-y-6 text-sm text-gray-600 dark:text-gray-400 pl-6">
+
+              <!-- Approach -->
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Approach</p>
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
+                  <p>
+                    Set up the analytics foundation for the new Wealth Specialists channel — headcount budgeting, trackers, scorecards and business reviews.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Outcome -->
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Outcome</p>
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
+                  <p>
+                    75 hires managing ₹2,000 Cr AUM across 8,000 customers.
+                    <br/>
+                    <span class="text-gray-500">₹600 Cr net new.</span>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div onclick="toggleProject(this)" class="project cursor-pointer py-4 px-2 -mx-2 transition-colors">
+
+            <!-- Title -->
+            <div class="flex items-start gap-3">
+              <span class="arrow transition-transform duration-300 leading-6">→</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-baseline justify-between gap-4">
+                  <p class="text-gray-900 dark:text-gray-100">Wealth Readiness Model</p>
+                  <p class="text-xs text-gray-500 tabular-nums whitespace-nowrap">+₹300 Cr AUM</p>
+                </div>
+                <p class="text-sm text-gray-500 mt-0.5">Enabling Customer Prioritization</p>
+              </div>
+            </div>
           
             <!-- Case Study -->
-            <div class="project-desc mt-6 space-y-6 text-sm text-gray-400">
+            <div class="project-desc space-y-6 text-sm text-gray-600 dark:text-gray-400 pl-6">
           
               <!-- Context -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Context</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
                     Relationship managers struggled to identify customers for initiating investment conversations.
                   </p>
@@ -412,7 +546,7 @@
               <!-- Challenge -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Challenge</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
                     Leverage behavioral, external, and demographic data to identify look-alike customers of existing investors and enable targeted outreach.
                   </p>
@@ -422,7 +556,7 @@
               <!-- Approach -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Approach</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
                     Built a look-alike model using LightGBM, optimized for recall. Identified and prioritized the top 5% of customers for frontline activation.
                   </p>
@@ -432,18 +566,86 @@
               <!-- Outcome -->
               <div>
                 <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Outcome</p>
-                <div class="border-l border-gray-700 pl-4">
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
                   <p>
                     +300 Cr AUM from the campaign.
                     <br/>
-                    <span class="text-gray-500">+0.2% increase in investment penetration.</span>
+                    <span class="text-gray-500">+0.47 percentage points in investment penetration across the managed base.</span>
                   </p>
                 </div>
               </div>
-          
+
+            </div>
+          </div>
+
+          <div onclick="toggleProject(this)" class="project cursor-pointer py-4 px-2 -mx-2 transition-colors">
+
+            <!-- Title -->
+            <div class="flex items-start gap-3">
+              <span class="arrow transition-transform duration-300 leading-6">→</span>
+              <div class="flex-1 min-w-0">
+                <div class="flex items-baseline justify-between gap-4">
+                  <p class="text-gray-900 dark:text-gray-100">RM Pre-Meeting Coach</p>
+                  <p class="text-xs text-gray-500 tabular-nums whitespace-nowrap">50 RMs · pilot</p>
+                </div>
+                <p class="text-sm text-gray-500 mt-0.5">Gen AI Customer Briefs</p>
+              </div>
+            </div>
+
+            <!-- Case Study -->
+            <div class="project-desc space-y-6 text-sm text-gray-600 dark:text-gray-400 pl-6">
+
+              <!-- Approach -->
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Approach</p>
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
+                  <p>
+                    A gen AI brief for every RM meeting, combining the customer's holdings, goals and Value Index recommendations.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Outcome -->
+              <div>
+                <p class="text-xs uppercase tracking-widest text-gray-500 mb-2">Outcome</p>
+                <div class="border-l border-gray-300 dark:border-gray-700 pl-4 case-line">
+                  <p>
+                    Piloting with 50 RMs.
+                    <br/>
+                    <span class="text-gray-500">About 28 briefs a day over two months.</span>
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
       
+
+    </div>
+  </section>
+
+  <!-- RECOGNITION -->
+  <section class="mb-24 reveal">
+    <h2 class="text-xs uppercase tracking-widest text-gray-500 mb-6">
+      Recognition
+    </h2>
+
+    <div class="space-y-4 text-sm">
+
+      <div class="flex justify-between items-baseline gap-4">
+        <p class="text-gray-700 dark:text-gray-300">Award for Excellence · Data &amp; Analytics</p>
+        <p class="text-xs text-gray-500 whitespace-nowrap">FY23-24 · FY25-26</p>
+      </div>
+
+      <div class="flex justify-between items-baseline gap-4">
+        <p class="text-gray-700 dark:text-gray-300">Award for Exemplary Contributions · Data &amp; Analytics</p>
+        <p class="text-xs text-gray-500 whitespace-nowrap">H1 FY23-24</p>
+      </div>
+
+      <div class="flex justify-between items-baseline gap-4">
+        <p class="text-gray-700 dark:text-gray-300">Best Newcomer Trainee · Data &amp; Analytics</p>
+        <p class="text-xs text-gray-500 whitespace-nowrap">FY22-23</p>
+      </div>
 
     </div>
   </section>
@@ -473,10 +675,14 @@
       Contact
     </h2>
 
-    <p class="text-gray-700 dark:text-gray-300">
+    <a href="mailto:mohilkhare17@gmail.com" class="accent-link text-gray-700 dark:text-gray-300">
       mohilkhare17@gmail.com
-    </p>
+    </a>
   </section>
+
+  <p class="mt-24 text-xs text-gray-400 dark:text-gray-600">
+    Updated Nov 2026
+  </p>
 
 </div>
 
@@ -502,6 +708,7 @@ function toggleProject(el) {
 
   desc.classList.toggle("open");
   arrow.classList.toggle("rotate-90");
+  el.classList.toggle("open");
 }
 
 // reveal
@@ -584,6 +791,11 @@ function handleScrollFocus() {
       closest = section;
     }
   });
+
+  // at the bottom of the page, keep the last section in focus
+  if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+    closest = sections[sections.length - 1];
+  }
 
   sections.forEach(section => {
     if (section === closest) {
